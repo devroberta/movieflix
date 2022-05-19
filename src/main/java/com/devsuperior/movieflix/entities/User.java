@@ -82,7 +82,13 @@ public class User implements Serializable {
     this.password = password;
   }
 
+  public Set<Role> getRoles() {
+    return roles;
+  }
 
+  public List<Review> getReviews() {
+    return reviews;
+  }
 
   @Override
   public boolean equals(Object o) {
