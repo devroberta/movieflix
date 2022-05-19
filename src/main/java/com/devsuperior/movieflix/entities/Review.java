@@ -21,12 +21,12 @@ public class Review implements Serializable {
   private String text;
 
   @ManyToOne
-  @JoinColumn(name = "movie_id")
-  private Movie movie;
-
-  @ManyToOne
   @JoinColumn(name="user_id")
   private User user;
+
+  @ManyToOne
+  @JoinColumn(name = "movie_id")
+  private Movie movie;
 
   public Review() {
   }
@@ -50,6 +50,14 @@ public class Review implements Serializable {
 
   public void setText(String text) {
     this.text = text;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public Movie getMovie() {
+    return movie;
   }
 
   @Override
